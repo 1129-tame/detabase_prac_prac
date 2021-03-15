@@ -56,5 +56,10 @@ $html_form = <<<EOD
         <input type='submit'  value='送信する'>
     </p>
 </form>
+<form action ='list.php' method ='post'>
+    <p>
+        <input type='submit' value ='戻る'>
+    </p>
+</form>
 EOD;
 echo $html_form; //格納していたHTMLを出力
