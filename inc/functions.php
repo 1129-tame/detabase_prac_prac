@@ -4,8 +4,8 @@ function str2html(string $string) :string {
 }
 //関数作成、XSS対策、特殊文字の無害化
 function db_open() :PDO {  //型宣言でPDO型を指定
-    $user = "phpuser";
-    $password = "uRZ89Tfw32H2PG9r";
+    $user = "xxxxxxxxxx";
+    $password = "xxxxxxxxxxx";
     $opt = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_EMULATE_PREPARES => false,

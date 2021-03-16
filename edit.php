@@ -1,5 +1,6 @@
 <?php
-require_once "functions.php";
+require_once __DIR__ . '/inc/functions.php';
+include __DIR__ . '/inc/header.php';
 //バリデーション
 if (empty($_GET['id'])){
     echo "idを指定してください";
@@ -30,7 +31,7 @@ $author = str2html($resolt['author']);
 $id = str2html($resolt['id']);
 // フォーム上で表記
 $html_form = <<<EOD
-<form action='update.php' method='post'>
+<form action='Update.php' method='post'>
     <p>
         <label for='title'>タイトル：</label>
         <input type='text' name='title' value='$title'>
@@ -52,14 +53,16 @@ $html_form = <<<EOD
         <input type='text' name='author' value='$author'>
     </p>
     <p class = 'button'>
-        <input type='hidden' name='id' value='$id'>
-        <input type='submit'  value='送信する'>
+        <input type='hidden' name='id' value='$id'> 
+        <input type='submit'  value='更新する'>
     </p>
 </form>
-<form action ='list.php' method ='post'>
+<form action ='index.php' method ='post'>
     <p>
         <input type='submit' value ='戻る'>
     </p>
 </form>
-EOD;
+EOD;   //idはhiddenで隠す
+include __DIR__ . '/inc/header.php'; //ヘッダー
 echo $html_form; //格納していたHTMLを出力
+include __DIR__ . '/inc/footer.php';

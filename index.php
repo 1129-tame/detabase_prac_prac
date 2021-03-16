@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>サンプルコード</title>
-        <meta name="viewport" contact="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="./style.css">
-    </head>
-    <body>
-        <header>
-            <h1>書籍データベース</h1>
-        </header>
-
     <?php
-    require_once 'functions.php';
+    require_once __DIR__ . '/inc/functions.php';
+    include __DIR__ . '/inc/header.php'; //外部ファイル化
     try {
         $dbh = db_open();
         $sql = 'SELECT * FROM books';
@@ -34,6 +22,7 @@
         <?php endwhile; // ; = }
          ?>
     </table>
+            <a href="input.php">新規追加</a>
     <?php
     } catch (PDOException $e) {
         echo "エラー！:" .str2html($e->getMessage()) . "<br>";
@@ -41,6 +30,4 @@
         exit;
     }
     ?>
-
-    </body>
-    </html>
+<?php include __DIR__ . '/inc/footer.php';

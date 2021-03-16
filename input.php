@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>サンプルコード</title>
-        <meta name="viewport" contact="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="./style.css">
-    </head>
-<body>
-    <h1>github練習用</h1>
+<?php include __DIR__ . '/inc/header.php'; ?>
     <form method="POST" action='add.php'>
         <p>
             <label　for="title">タイトル（必須・200文字まで）：</label>
@@ -33,10 +24,9 @@
             <input type="submit" value="送信する">
         </p>
         </form>
-    <form action="list.php"　method="POST">
+    <form action="index.php"　method="POST">
         <p>
             <input type="submit" value="リスト全表示">
         </p>
     </form>
-</body>
-</html>
+<?php include __DIR__ . '/inc/footer.php';
